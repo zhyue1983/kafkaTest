@@ -22,6 +22,7 @@ public class Producter {
         User u = new User();
         u.setName(name);
         u.setAge(11);
+
         kafkaTemplate.send("user", JSON.toJSONString(u));
     }
 }
