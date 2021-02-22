@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: kafka-user
+  kafka:
+    bootstrap-servers: 10.1.2.138:9092
+    consumer:
+      auto-commit-interval: 100
+      auto-offset-reset: earliest
+      enable-auto-commit: true
+      group-id: user-log-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      batch-size: 16384
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      retries: 0
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+logging:
+  level:
+    root=debug:
